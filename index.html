@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BingeButton</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- RED BARS -->
+    <div class="glow left"></div>
+    <div class="glow right"></div>
+
+    <!-- NAV -->
+    <div class="navbar">
+        <div class="logo">BingeButton</div>
+        <div class="nav-right">
+            <a onclick="showPage('home')">Home</a>
+            <a onclick="showPage('randomizer')">Randomizer</a>
+        </div>
+    </div>
+
+    <!-- ================= HOME PAGE (UNCHANGED) ================= -->
+    <div id="home" class="page active home-page">
+
+        <div class="hero-wrap">
+            <h1 class="hero-title">BingeButton</h1>
+
+            <div class="reel-viewport">
+                <div id="reel" class="reel"></div>
+            </div>
+
+            <p class="hero-sub">
+                Discover random Movies & Series instantly. Just go to Randomizer & enjoy the cinematic motion.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- ================= RANDOMIZER PAGE (NETFLIX STYLE) ================= -->
+    <div id="randomizer" class="page home-page">
+
+        <div class="hero-wrap">
+            <h1 class="hero-title">TOP PICKS FOR YOU</h1>
+
+            <div class="controls">
+                <select id="typeSelect">
+                    <option value="movie">Movie</option>
+                    <option value="tv">TV Series</option>
+                    <option value="both">All</option>
+                </select>
+
+                <button class="red-btn" onclick="getRandomList()">
+                    GENERATE
+                </button>
+            </div>
+        </div>
+
+        <!-- NETFLIX TOP-10 STYLE RAIL -->
+        <div class="rail-wrapper">
+            <div id="slider" class="netflix-rail"></div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="home-animation.js"></script>
+
+</body>
+</html>

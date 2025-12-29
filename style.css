@@ -1,0 +1,181 @@
+/* RESET */
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.home-page {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.05), rgba(0,0,0,0.8));
+    position: relative;
+}
+
+/* NAV */
+.navbar {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    padding: 18px 36px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.nav-right a {
+    color: #ddd;
+    margin-left: 22px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* RED BARS */
+.glow {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 999999;
+    pointer-events: none;
+}
+
+.glow.left {
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,0,20,0.85), transparent);
+}
+
+.glow.right {
+    right: 0;
+    background: linear-gradient(270deg, rgba(255,0,20,0.85), transparent);
+}
+
+/* HERO */
+.hero-wrap {
+    padding: 120px 10vw 40px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(48px, 8vw, 110px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* CONTROLS */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.controls select {
+    background: #111;
+    color: #fff;
+    padding: 12px 18px;
+    border: 1px solid #333;
+    font-size: 16px;
+}
+
+.red-btn {
+    background: #E50914;
+    padding: 14px 28px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* REEL (HOME PAGE) */
+.reel-viewport {
+    width: 100%;
+    max-width: 1500px;
+    margin: 40px auto;
+    overflow: hidden;
+    perspective: 1400px;
+}
+
+.reel {
+    display: flex;
+    gap: 32px;
+    padding: 30px 0;
+}
+
+.poster {
+    width: 250px;
+    height: 360px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+/* PAGE SWITCH */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ================= NETFLIX TOP-10 TEXT RAIL ================= */
+
+.rail-wrapper {
+    padding: 40px 60px 100px;
+    overflow-x: auto;
+}
+
+.netflix-rail {
+    display: flex;
+    gap: 40px;
+}
+
+.rank-card {
+    position: relative;
+    min-width: 420px;
+    background: #111;
+    border-radius: 18px;
+    padding: 28px 28px 28px 120px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    transition: transform 0.35s ease;
+}
+
+.rank-card:hover {
+    transform: scale(1.06);
+}
+
+.rank-number {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 140px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.08);
+}
+
+.rank-card h3 {
+    margin: 0 0 12px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.rank-meta {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.rank-desc {
+    font-size: 15px;
+    color: #ddd;
+    line-height: 1.5;
+}
